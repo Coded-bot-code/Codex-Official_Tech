@@ -1,0 +1,456 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* Gradient background */
+}
+
+header {
+    background: rgba(15, 32, 39, 0.7);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1:hover {
+    color: #90caf9;
+}
+
+/* Style the menu button */
+#menu-toggle {
+    display: none; /* Hide by default, show on smaller screens */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 15;
+}
+
+#menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Animate the menu button when active */
+#menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 5px);
+}
+
+#menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+nav {
+    margin-top: 0; /* Remove margin-top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    color: #bbdefb;
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    margin: 0 0.5rem;
+    border-radius: 7px;
+    background-color: rgba(25, 25, 25, 0.7);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    border: 1px solid rgba(100, 181, 246, 0.3);
+}
+
+nav a:hover {
+    background-color: rgba(100, 181, 246, 0.2);
+    color: #fff;
+}
+
+main {
+    padding: 2rem;
+    position: relative;
+    z-index: 5; /* Place main content above background */
+    display: flex;          /* Enable flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center;     /* Center content vertically */
+    min-height: 70vh;       /* Ensure main section takes up at least the viewport height */
+}
+
+.hero {
+    background-color: rgba(44, 83, 100, 0.6);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.hero button {
+    background-color: #64b5f6;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #90caf9;
+}
+
+.articles h2,
+.tutorials h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #ddd;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.article-grid,
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+article {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+}
+
+article h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #eee;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+article p {
+    color: #ccc;
+    line-height: 1.5;
+}
+
+article a {
+    display: inline-block;
+    background-color: #64b5f6;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    border-radius: 7px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+article a:hover {
+    background-color: #90caf9;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    padding: 0.75rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #ddd;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* CSS for about.html */
+.about-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(44, 83, 100, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-container h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.about-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-container li {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.about-container a {
+    color: #64b5f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.about-container a:hover {
+    color: #90caf9;
+}
+
+/* Styles for the floating tech characters */
+.floating-character {
+    position: absolute;
+    width: 50px;
+    height: auto;
+    z-index: 2;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Keyframes for different floating motions */
+@keyframes float1 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(10px, -15px) rotate(5deg); }
+    75% { transform: translate(-10px, 15px) rotate(-5deg); }
+}
+
+@keyframes float2 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-15px, -10px) rotate(-10deg); }
+    75% { transform: translate(15px, 10px) rotate(10deg); }
+}
+
+@keyframes float3 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(15px, -20px) rotate(8deg); }
+    75% { transform: translate(-15px, 20px) rotate(-8deg); }
+}
+
+@keyframes float4 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-20px, -5px) rotate(-3deg); }
+    75% { transform: translate(20px, 5px) rotate(3deg); }
+}
+
+/* Apply different float animations to each character */
+.char1 {
+    top: 15%;
+    left: 10%;
+    animation: float1 7s infinite ease-in-out;
+}
+
+.char2 {
+    top: 30%;
+    right: 20%;
+    animation: float2 8s infinite ease-in-out;
+}
+
+.char3 {
+    bottom: 25%;
+    left: 15%;
+    animation: float3 6s infinite ease-in-out;
+}
+
+.char4 {
+    bottom: 10%;
+    right: 10%;
+    animation: float4 9s infinite ease-in-out;
+}
+
+.char5 {
+    top: 45%;
+    left: 5%;
+    animation: float1 9s infinite ease-in-out;
+}
+
+.char6 {
+    bottom: 35%;
+    right: 25%;
+    animation: float2 7s infinite ease-in-out;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Show the menu button */
+    #menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 32, 39, 0.9);
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Hide the menu */
+        padding: 0.5rem 0;
+    }
+
+    nav.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    nav a {
+        padding: 0.7rem 1.2rem;
+        margin: 0.5rem 0;
+        border-radius: 7px;
+        background-color: rgba(25, 25, 25, 0.7);
+        transition: background-color 0.3s ease, color 0.3s ease;
+        display: block; /* Stack the links */
+        width: 80%;
+        text-align: center;
+        border: 1px solid rgba(100, 181, 246, 0.3);
+    }
+
+    main {
+        padding: 1rem;
+        display: flex;          /* Enable flexbox */
+        justify-content: center; /* Center content horizontally */
+        align-items: center;     /* Center content vertically */
+        min-height: 60vh;
+    }
+
+    .hero {
+        padding: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .article-grid,
+    .tutorial-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    article {
+        padding: 1rem;
+    }
+
+    article h3 {
+        font-size: 1.3rem;
+    }
+
+    article p {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+
+    /* Mobile adjustments for floating characters */
+    .floating-character {
+        width: 30px;
+        font-size: 1.5em;
+    }
+
+    .char1 {
+        top: 15%;
+        left: 5%;
+    }
+
+    .char2 {
+        top: 35%;
+        right: 10%;
+    }
+
+    .char3 {
+        bottom: 15%;
+        left: 20%;
+    }
+
+    .char4 {
+        bottom: 25%;
+        right: 20%;
+    }
+
+    .char5 {
+        top: 45%;
+        left: 5%;
+    }
+
+    .char6 {
+        bottom: 35%;
+        right: 25%;
+    }
+
+    /* Mobile Styles for about.html */
+    .about-container {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .about-container h1 {
+        font-size: 2rem;
+    }
+
+    .about-container p,
+    .about-container li {
+        font-size: 1.1rem;
+    }
+}
